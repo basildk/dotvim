@@ -1,6 +1,9 @@
-"============================================================
-" noopkat settings
-"============================================================
+if has('unix')
+        set t_Co=256
+endif
+
+execute pathogen#infect()
+call pathogen#helptags()
 syntax on
 color dracula
 set smartindent
@@ -22,6 +25,10 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 "============================================================
 " Mappings
 "============================================================
-
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+map <C-Left> <Esc>:bprev<CR>
+map <C-Right> <Esc>:bnext<CR>
+map <C-b> :NERDTreeToggle<CR>
 
 
